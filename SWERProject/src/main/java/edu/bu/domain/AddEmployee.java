@@ -7,15 +7,20 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.awt.event.ActionEvent;
 
 public class AddEmployee extends JFrame {
 
+	public static ArrayList<Employee> employees = new ArrayList<Employee>();
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -51,84 +56,133 @@ public class AddEmployee extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lblName = new JLabel("Name :");
 		lblName.setHorizontalAlignment(SwingConstants.LEFT);
 		lblName.setFont(new Font("Times New Roman", Font.PLAIN, 17));
 		lblName.setBounds(10, 11, 120, 31);
 		contentPane.add(lblName);
-		
+
 		JLabel lblAge = new JLabel("Age :");
 		lblAge.setHorizontalAlignment(SwingConstants.LEFT);
 		lblAge.setFont(new Font("Times New Roman", Font.PLAIN, 17));
 		lblAge.setBounds(10, 44, 120, 31);
 		contentPane.add(lblAge);
-		
+
 		JLabel lblStreetName = new JLabel("Street Name :");
 		lblStreetName.setHorizontalAlignment(SwingConstants.LEFT);
 		lblStreetName.setFont(new Font("Times New Roman", Font.PLAIN, 17));
 		lblStreetName.setBounds(10, 77, 120, 31);
 		contentPane.add(lblStreetName);
-		
+
 		JLabel lblHouseNumber = new JLabel("House Number :");
 		lblHouseNumber.setHorizontalAlignment(SwingConstants.LEFT);
 		lblHouseNumber.setFont(new Font("Times New Roman", Font.PLAIN, 17));
 		lblHouseNumber.setBounds(10, 110, 120, 31);
 		contentPane.add(lblHouseNumber);
-		
+
 		JLabel lblCity = new JLabel("City :");
 		lblCity.setHorizontalAlignment(SwingConstants.LEFT);
 		lblCity.setFont(new Font("Times New Roman", Font.PLAIN, 17));
 		lblCity.setBounds(10, 143, 120, 31);
 		contentPane.add(lblCity);
-		
+
 		JLabel lblSalary = new JLabel("Salary :");
 		lblSalary.setHorizontalAlignment(SwingConstants.LEFT);
 		lblSalary.setFont(new Font("Times New Roman", Font.PLAIN, 17));
 		lblSalary.setBounds(10, 176, 120, 31);
 		contentPane.add(lblSalary);
-		
+
 		textField = new JTextField();
 		textField.setFont(new Font("Times New Roman", Font.PLAIN, 17));
 		textField.setBounds(157, 11, 120, 31);
 		contentPane.add(textField);
 		textField.setColumns(10);
-		
+
 		textField_1 = new JTextField();
 		textField_1.setFont(new Font("Times New Roman", Font.PLAIN, 17));
 		textField_1.setColumns(10);
 		textField_1.setBounds(157, 44, 120, 31);
 		contentPane.add(textField_1);
-		
+
 		textField_2 = new JTextField();
 		textField_2.setFont(new Font("Times New Roman", Font.PLAIN, 17));
 		textField_2.setColumns(10);
 		textField_2.setBounds(157, 77, 120, 31);
 		contentPane.add(textField_2);
-		
+
 		textField_3 = new JTextField();
 		textField_3.setFont(new Font("Times New Roman", Font.PLAIN, 17));
 		textField_3.setColumns(10);
 		textField_3.setBounds(157, 110, 120, 31);
 		contentPane.add(textField_3);
-		
+
 		textField_4 = new JTextField();
 		textField_4.setFont(new Font("Times New Roman", Font.PLAIN, 17));
 		textField_4.setColumns(10);
 		textField_4.setBounds(157, 143, 120, 31);
 		contentPane.add(textField_4);
-		
+
 		textField_5 = new JTextField();
 		textField_5.setFont(new Font("Times New Roman", Font.PLAIN, 17));
 		textField_5.setColumns(10);
 		textField_5.setBounds(157, 176, 120, 31);
 		contentPane.add(textField_5);
-		
+
 		JButton btnNewButton = new JButton("Add");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				boolean c = ifExist(textField.getText());
+				if (c) {
+					if (textField.getText().isEmpty() || textField_1.getText().isEmpty()
+							|| textField_2.getText().isEmpty() || textField_3.getText().isEmpty()
+							|| textField_4.getText().isEmpty() || textField_5.getText().isEmpty()) {
+						JOptionPane.showMessageDialog(null, "Please fill all the blanks!", "Error", getState());
+					} else {
+						try {
+
+							employees
+									.add(new Employee(textField.getText(), Integer.parseInt(textField_1.getText()),
+											(new Address(textField_2.getText(), textField_3.getText(),
+													textField_4.getText())),
+											Double.parseDouble(textField_5.getText())));
+							JOptionPane.showMessageDialog(null, "Done");
+							textField.setText("");
+							textField_1.setText("");
+							textField_2.setText("");
+							textField_3.setText("");
+							textField_4.setText("");
+							textField_5.setText("");
+
+						} catch (Exception n) {
+							JOptionPane.showMessageDialog(null, "Please enter a correct information!", "Error",
+									getState());
+						}
+					}
+				}
+			}
+
+			private boolean ifExist(String text) {
+				for (Employee l : AddEmployee.employees) {
+					if (textField.getText().equals(l.name)) {
+						JOptionPane.showMessageDialog(null, "This program doesn't support two names which are the same!", "Error", getState());
+						return false;
+					}
+				}
+				for (Student l : AddStudent.students) {
+					if (textField.getText().equals(l.name)) {
+						JOptionPane.showMessageDialog(null, "This program doesn't support two names which are the same!", "Error", getState());
+						return false;
+					}
+				}
+				return true;
+			}
+		});
+
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		btnNewButton.setBounds(10, 218, 130, 32);
 		contentPane.add(btnNewButton);
-		
+
 		btnBack = new JButton("Back");
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

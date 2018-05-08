@@ -12,10 +12,4 @@ public abstract class Person {
 		this.address = address;
 	}
 
-	public Person(String name, int age) {
-		this.name = name;
-		this.age = age;
-		
-	}
-
 }
