@@ -351,24 +351,23 @@ public class Search extends JFrame {
 										Double.parseDouble(textField_5.getText()))));
 						JOptionPane.showMessageDialog(null, "Successfully saved");
 					}
-					if (rdbtnBoth.isSelected()){
-						if (indexB1 >= 0){
-						AddEmployee.employees.set(indexM,
-								(new Employee(textField.getText(),
-										Integer.parseInt(textField_1.getText()), (new Address(textField_2.getText(),
-												textField_3.getText(), textField_4.getText())),
-										Double.parseDouble(textField_5.getText()))));
-						JOptionPane.showMessageDialog(null, "Successfully saved");
-						indexB1 = -1;
-						}
-						else {
-						AddStudent.students.set(indexS,
-								(new Student(textField.getText(),
-										Integer.parseInt(textField_1.getText()), (new Address(textField_2.getText(),
-												textField_3.getText(), textField_4.getText())),
-										Double.parseDouble(textField_5.getText()))));
-						JOptionPane.showMessageDialog(null, "Successfully saved");
-						indexB2 = -1;
+					if (rdbtnBoth.isSelected()) {
+						if (indexB1 >= 0) {
+							AddEmployee.employees.set(indexB1,
+									(new Employee(textField.getText(), Integer.parseInt(textField_1.getText()),
+											(new Address(textField_2.getText(), textField_3.getText(),
+													textField_4.getText())),
+											Double.parseDouble(textField_5.getText()))));
+							JOptionPane.showMessageDialog(null, "Successfully saved");
+							indexB1 = -1;
+						} else if (indexB2 >= 0) {
+							AddStudent.students.set(indexB2,
+									(new Student(textField.getText(), Integer.parseInt(textField_1.getText()),
+											(new Address(textField_2.getText(), textField_3.getText(),
+													textField_4.getText())),
+											Double.parseDouble(textField_5.getText()))));
+							JOptionPane.showMessageDialog(null, "Successfully saved");
+							indexB2 = -1;
 						}
 					}
 
