@@ -32,8 +32,8 @@ public class Search extends JFrame {
 	private JButton btnSave;
 	public static int indexM;
 	public static int indexS;
-	public static int indexB1;
-	public static int indexB2;
+	public static int indexB1 = -1;
+	public static int indexB2 = -1;
 
 	/**
 	 * Launch the application.
@@ -352,7 +352,10 @@ public class Search extends JFrame {
 						JOptionPane.showMessageDialog(null, "Successfully saved");
 					}
 					if (rdbtnBoth.isSelected()) {
-						if (indexB1 >= 0) {
+						System.out.println(indexB1);
+						System.out.println(indexB2);
+
+						if (indexB1 > -1) {
 							AddEmployee.employees.set(indexB1,
 									(new Employee(textField.getText(), Integer.parseInt(textField_1.getText()),
 											(new Address(textField_2.getText(), textField_3.getText(),
@@ -360,7 +363,7 @@ public class Search extends JFrame {
 											Double.parseDouble(textField_5.getText()))));
 							JOptionPane.showMessageDialog(null, "Successfully saved");
 							indexB1 = -1;
-						} else if (indexB2 >= 0) {
+						} else if (indexB2 > -1) {
 							AddStudent.students.set(indexB2,
 									(new Student(textField.getText(), Integer.parseInt(textField_1.getText()),
 											(new Address(textField_2.getText(), textField_3.getText(),

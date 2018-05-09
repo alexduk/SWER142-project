@@ -172,7 +172,7 @@ public class Report extends JFrame {
 		btnHelp.setBounds(39, 248, 99, 23);
 		contentPane.add(btnHelp);
 
-		btnPrint = new JButton("Print");
+		btnPrint = new JButton("Save & Print");
 		btnPrint.setEnabled(false);
 		btnPrint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -185,7 +185,7 @@ public class Report extends JFrame {
 			}
 		});
 		btnPrint.setFont(new Font("Times New Roman", Font.BOLD, 14));
-		btnPrint.setBounds(156, 248, 99, 23);
+		btnPrint.setBounds(143, 248, 133, 23);
 		contentPane.add(btnPrint);
 	}
 }
