@@ -19,6 +19,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.concurrent.TimeUnit;
 import java.awt.event.ActionEvent;
+import java.awt.Toolkit;
+import java.awt.Color;
 
 public class Search extends JFrame {
 
@@ -55,28 +57,38 @@ public class Search extends JFrame {
 	 * Create the frame.
 	 */
 	public Search() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\github\\SWERProject\\search.png"));
+		setTitle("Search");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 0, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JLabel lblSearchForEmployees = new JLabel("Search for Employees or Students.");
+		lblSearchForEmployees.setForeground(new Color(255, 255, 255));
 		lblSearchForEmployees.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		lblSearchForEmployees.setBounds(27, 17, 239, 20);
 		contentPane.add(lblSearchForEmployees);
 
 		final JRadioButton rdbtnEmployees = new JRadioButton("Employees");
+		rdbtnEmployees.setBackground(new Color(0, 0, 255));
+		rdbtnEmployees.setForeground(new Color(255, 255, 255));
 		rdbtnEmployees.setSelected(true);
 		rdbtnEmployees.setBounds(27, 47, 88, 23);
 		contentPane.add(rdbtnEmployees);
 
 		final JRadioButton rdbtnStudents = new JRadioButton("Students");
+		rdbtnStudents.setForeground(new Color(255, 255, 255));
+		rdbtnStudents.setBackground(new Color(0, 0, 255));
 		rdbtnStudents.setBounds(114, 47, 77, 23);
 		contentPane.add(rdbtnStudents);
 
 		final JRadioButton rdbtnBoth = new JRadioButton("Both");
+		rdbtnBoth.setForeground(new Color(255, 255, 255));
+		rdbtnBoth.setBackground(new Color(0, 0, 255));
 		rdbtnBoth.setBounds(193, 47, 53, 23);
 		contentPane.add(rdbtnBoth);
 
@@ -86,42 +98,52 @@ public class Search extends JFrame {
 		group.add(rdbtnEmployees);
 
 		JLabel lblEnterAName = new JLabel("Enter a name :");
+		lblEnterAName.setForeground(new Color(255, 255, 255));
 		lblEnterAName.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 		lblEnterAName.setBounds(27, 77, 99, 14);
 		contentPane.add(lblEnterAName);
 
 		textField = new JTextField();
-		textField.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		textField.setBackground(new Color(0, 0, 255));
+		textField.setForeground(new Color(255, 255, 255));
+		textField.setFont(new Font("Times New Roman", Font.PLAIN, 16));
 		textField.setBounds(124, 77, 122, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
 
 		JLabel lblAge = new JLabel("Age :");
+		lblAge.setForeground(new Color(255, 255, 255));
 		lblAge.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 		lblAge.setBounds(27, 121, 99, 14);
 		contentPane.add(lblAge);
 
 		JLabel lblStreet = new JLabel("Street Name :");
+		lblStreet.setForeground(new Color(255, 255, 255));
 		lblStreet.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 		lblStreet.setBounds(27, 146, 99, 14);
 		contentPane.add(lblStreet);
 
 		JLabel lblHouseNumber = new JLabel("House Number :");
+		lblHouseNumber.setForeground(new Color(255, 255, 255));
 		lblHouseNumber.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 		lblHouseNumber.setBounds(27, 171, 99, 14);
 		contentPane.add(lblHouseNumber);
 
 		JLabel lblCity = new JLabel("City :");
+		lblCity.setForeground(new Color(255, 255, 255));
 		lblCity.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 		lblCity.setBounds(27, 195, 99, 14);
 		contentPane.add(lblCity);
 
 		JLabel lblSalarygrade = new JLabel("Salary/Grade :");
+		lblSalarygrade.setForeground(new Color(255, 255, 255));
 		lblSalarygrade.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 		lblSalarygrade.setBounds(27, 220, 99, 14);
 		contentPane.add(lblSalarygrade);
 
 		textField_1 = new JTextField();
+		textField_1.setForeground(new Color(255, 255, 255));
+		textField_1.setBackground(new Color(0, 0, 255));
 		textField_1.setEditable(false);
 		textField_1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 		textField_1.setColumns(10);
@@ -129,6 +151,8 @@ public class Search extends JFrame {
 		contentPane.add(textField_1);
 
 		textField_2 = new JTextField();
+		textField_2.setBackground(new Color(0, 0, 255));
+		textField_2.setForeground(new Color(255, 255, 255));
 		textField_2.setEditable(false);
 		textField_2.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 		textField_2.setColumns(10);
@@ -136,6 +160,8 @@ public class Search extends JFrame {
 		contentPane.add(textField_2);
 
 		textField_3 = new JTextField();
+		textField_3.setForeground(new Color(255, 255, 255));
+		textField_3.setBackground(new Color(0, 0, 255));
 		textField_3.setEditable(false);
 		textField_3.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 		textField_3.setColumns(10);
@@ -143,6 +169,8 @@ public class Search extends JFrame {
 		contentPane.add(textField_3);
 
 		textField_4 = new JTextField();
+		textField_4.setBackground(new Color(0, 0, 255));
+		textField_4.setForeground(new Color(255, 255, 255));
 		textField_4.setEditable(false);
 		textField_4.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 		textField_4.setColumns(10);
@@ -150,6 +178,8 @@ public class Search extends JFrame {
 		contentPane.add(textField_4);
 
 		textField_5 = new JTextField();
+		textField_5.setForeground(new Color(255, 255, 255));
+		textField_5.setBackground(new Color(0, 0, 255));
 		textField_5.setEditable(false);
 		textField_5.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 		textField_5.setColumns(10);
@@ -157,6 +187,8 @@ public class Search extends JFrame {
 		contentPane.add(textField_5);
 
 		JButton btnSearch = new JButton("Search");
+		btnSearch.setForeground(new Color(255, 255, 255));
+		btnSearch.setBackground(new Color(0, 0, 255));
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent a) {
 				if (rdbtnEmployees.isSelected()) {
@@ -328,10 +360,13 @@ public class Search extends JFrame {
 		contentPane.add(btnSearch);
 
 		JLabel lblNewLabel = new JLabel("----------------------------------------------------");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setBounds(27, 102, 219, 8);
 		contentPane.add(lblNewLabel);
 
 		btnSave = new JButton("Save");
+		btnSave.setBackground(new Color(0, 0, 255));
+		btnSave.setForeground(new Color(255, 255, 255));
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
@@ -383,6 +418,8 @@ public class Search extends JFrame {
 		contentPane.add(btnSave);
 
 		JButton btnBack = new JButton("Back");
+		btnBack.setForeground(new Color(255, 255, 255));
+		btnBack.setBackground(new Color(0, 0, 255));
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();

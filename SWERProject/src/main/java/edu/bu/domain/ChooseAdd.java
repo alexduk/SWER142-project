@@ -8,11 +8,16 @@ import javax.swing.border.EmptyBorder;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
+import java.awt.Color;
+import java.awt.Toolkit;
 
 public class ChooseAdd extends JFrame {
 
@@ -27,6 +32,7 @@ public class ChooseAdd extends JFrame {
 				try {
 					ChooseAdd frame = new ChooseAdd();
 					frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -38,14 +44,19 @@ public class ChooseAdd extends JFrame {
 	 * Create the frame.
 	 */
 	public ChooseAdd() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\github\\SWERProject\\layers.png"));
+		setTitle("Choose");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 380, 350);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 0, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Add Employee");
+		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setBackground(new Color(0, 0, 255));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -58,6 +69,8 @@ public class ChooseAdd extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnAddStudent = new JButton("Add Student");
+		btnAddStudent.setForeground(new Color(255, 255, 255));
+		btnAddStudent.setBackground(new Color(0, 0, 255));
 		btnAddStudent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -69,6 +82,8 @@ public class ChooseAdd extends JFrame {
 		contentPane.add(btnAddStudent);
 		
 		JButton btnAddAdmin = new JButton("Add Admin");
+		btnAddAdmin.setForeground(new Color(255, 255, 255));
+		btnAddAdmin.setBackground(new Color(0, 0, 255));
 		btnAddAdmin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -81,6 +96,8 @@ public class ChooseAdd extends JFrame {
 		contentPane.add(btnAddAdmin);
 		
 		JButton btnSearchForEmployees = new JButton("Search For Employees and Students");
+		btnSearchForEmployees.setForeground(new Color(255, 255, 255));
+		btnSearchForEmployees.setBackground(new Color(0, 0, 255));
 		btnSearchForEmployees.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -92,6 +109,8 @@ public class ChooseAdd extends JFrame {
 		contentPane.add(btnSearchForEmployees);
 		
 		JButton btnReportGra = new JButton("Report Salaries and Grades");
+		btnReportGra.setForeground(new Color(255, 255, 255));
+		btnReportGra.setBackground(new Color(0, 0, 255));
 		btnReportGra.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -104,6 +123,8 @@ public class ChooseAdd extends JFrame {
 		try{
 		String s = Admin.textField.getText();
 		JLabel lblWelcomeAdmin = new JLabel("Welcome " + s);
+		lblWelcomeAdmin.setForeground(new Color(255, 255, 255));
+		lblWelcomeAdmin.setBackground(new Color(255, 255, 255));
 		lblWelcomeAdmin.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		lblWelcomeAdmin.setBounds(10, 11, 205, 34);
 		contentPane.add(lblWelcomeAdmin);
@@ -115,6 +136,8 @@ public class ChooseAdd extends JFrame {
 		
 		
 		JButton btnNewButton_1 = new JButton("Log out");
+		btnNewButton_1.setForeground(new Color(255, 255, 255));
+		btnNewButton_1.setBackground(new Color(0, 0, 255));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();

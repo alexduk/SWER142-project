@@ -28,6 +28,8 @@ import javax.swing.JTextPane;
 import javax.swing.JScrollPane;
 import javax.swing.JScrollBar;
 import java.awt.Scrollbar;
+import java.awt.Toolkit;
+import java.awt.Color;
 
 public class Report extends JFrame {
 
@@ -54,28 +56,39 @@ public class Report extends JFrame {
 	 * Create the frame.
 	 */
 	public Report() {
+		setTitle("Report");
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\github\\SWERProject\\bars-chart.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 430, 322);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 0, 255));
+		contentPane.setForeground(new Color(0, 0, 255));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JLabel lblChooseWhichOne = new JLabel("Choose which one you want to report.");
+		lblChooseWhichOne.setForeground(new Color(255, 255, 255));
 		lblChooseWhichOne.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		lblChooseWhichOne.setBounds(39, 29, 245, 14);
 		contentPane.add(lblChooseWhichOne);
 
 		textField = new JTextField();
+		textField.setBackground(new Color(0, 0, 255));
+		textField.setForeground(new Color(255, 255, 255));
 		textField.setBounds(185, 97, 86, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
 
 		final JRadioButton rdbtnEmployees = new JRadioButton("Employees");
+		rdbtnEmployees.setBackground(new Color(0, 0, 255));
+		rdbtnEmployees.setForeground(new Color(255, 255, 255));
 		rdbtnEmployees.setSelected(true);
 		rdbtnEmployees.setBounds(39, 61, 109, 23);
 		contentPane.add(rdbtnEmployees);
 
 		JRadioButton rdbtnStudents = new JRadioButton("Students");
+		rdbtnStudents.setForeground(new Color(255, 255, 255));
+		rdbtnStudents.setBackground(new Color(0, 0, 255));
 		rdbtnStudents.setBounds(162, 61, 109, 23);
 		contentPane.add(rdbtnStudents);
 
@@ -84,6 +97,7 @@ public class Report extends JFrame {
 		group.add(rdbtnEmployees);
 
 		JLabel lblEnterASalary = new JLabel("Enter a Salary/Grade:");
+		lblEnterASalary.setForeground(new Color(255, 255, 255));
 		lblEnterASalary.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 		lblEnterASalary.setBounds(39, 99, 120, 14);
 		contentPane.add(lblEnterASalary);
@@ -93,12 +107,16 @@ public class Report extends JFrame {
 		contentPane.add(scrollPane);
 
 		final JTextPane frmtdtxtfldSdf = new JTextPane();
+		frmtdtxtfldSdf.setForeground(new Color(255, 255, 255));
+		frmtdtxtfldSdf.setBackground(new Color(0, 0, 255));
 		frmtdtxtfldSdf.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 		scrollPane.setViewportView(frmtdtxtfldSdf);
 		frmtdtxtfldSdf.setEditable(false);
 		frmtdtxtfldSdf.setText("");
 
 		JButton btnReport = new JButton("Report");
+		btnReport.setForeground(new Color(255, 255, 255));
+		btnReport.setBackground(new Color(0, 0, 255));
 		btnReport.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (rdbtnEmployees.isSelected()) {
@@ -150,6 +168,8 @@ public class Report extends JFrame {
 		contentPane.add(btnReport);
 
 		JButton btnBack = new JButton("Back");
+		btnBack.setBackground(new Color(0, 0, 255));
+		btnBack.setForeground(new Color(255, 255, 255));
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -161,6 +181,8 @@ public class Report extends JFrame {
 		contentPane.add(btnBack);
 
 		JButton btnHelp = new JButton("Help");
+		btnHelp.setBackground(new Color(0, 0, 255));
+		btnHelp.setForeground(new Color(255, 255, 255));
 		btnHelp.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		btnHelp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -173,6 +195,8 @@ public class Report extends JFrame {
 		contentPane.add(btnHelp);
 
 		btnPrint = new JButton("Save & Print");
+		btnPrint.setForeground(new Color(255, 255, 255));
+		btnPrint.setBackground(new Color(0, 0, 255));
 		btnPrint.setEnabled(false);
 		btnPrint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
