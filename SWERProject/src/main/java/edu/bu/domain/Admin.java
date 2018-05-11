@@ -6,6 +6,13 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import org.json.JSONObject;
+
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
@@ -13,17 +20,19 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
 import javax.swing.JToolBar;
+import org.json.simple.parser.*;
 
 public class Admin extends JFrame {
-	public ArrayList<Administrator> admins = new ArrayList<Administrator>();
+	public static ArrayList<Administrator> admins = new ArrayList<Administrator>();
 	private JPanel contentPane;
 	public static JTextField textField;
 	private JPasswordField textField_1;
-
 	/**
 	 * Launch the application.
 	 */
@@ -44,8 +53,9 @@ public class Admin extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @throws JsonProcessingException 
 	 */
-	public Admin() {
+	public Admin() throws JsonProcessingException {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 275, 200);
 		contentPane = new JPanel();
@@ -77,8 +87,17 @@ public class Admin extends JFrame {
 		textField_1.setBounds(114, 64, 124, 26);
 		contentPane.add(textField_1);
 		admins.add(new Administrator("alex","alex"));
-		admins.addAll(AddAdmin.admins2);
+		/*JSONParser parser = new JSONParser();
+		try {
+			Object obj = parser.parse(new FileReader("AdminsList.json"));
+			JSONObject jsonObj = (JSONObject) obj;
 
+		}
+		catch (Exception n){}*/
+		
+		admins.addAll(AddAdmin.admins2);
+		
+		
 		JButton btnLogIn = new JButton("Log in");
 		btnLogIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

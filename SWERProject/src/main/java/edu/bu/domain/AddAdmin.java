@@ -6,6 +6,12 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -13,13 +19,14 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
 
-public class AddAdmin extends JFrame  {
-	public static  ArrayList<Administrator> admins2 = new ArrayList<Administrator>();
-
+public class AddAdmin extends JFrame {
+	public static ArrayList<Administrator> admins2 = new ArrayList<Administrator>();
 
 	private JPanel contentPane;
 	public static JTextField textField;
@@ -27,7 +34,8 @@ public class AddAdmin extends JFrame  {
 	private JLabel label;
 	private JLabel lblRepassword;
 	public static JPasswordField textField_2;
-
+	ObjectMapper m = new ObjectMapper();
+	public static Administrator arrayOfAdmins;
 	/**
 	 * Launch the application.
 	 */
@@ -81,11 +89,28 @@ public class AddAdmin extends JFrame  {
 					JOptionPane.showMessageDialog(null, "Please fill all the blanks!", "Error", getState());
 				} else if (textField_1.getText().equals(textField_2.getText())) {
 					JOptionPane.showMessageDialog(null, "Done");
+					try {
+						String jsonString = m.writeValueAsString(admins2);
+						arrayOfAdmins = m.readValue(jsonString, Administrator.class);
+						admins2.add(arrayOfAdmins);
+						
+					} catch (Exception e) {
+					}
+					System.out.println(arrayOfAdmins);
 					dispose();
 					new ChooseAdd().setVisible(true);
-					
+
 					admins2.add(new Administrator(textField.getText(), textField_1.getText()));
-					
+
+					/*
+					 * JSONObject obj = new JSONObject(); JSONArray list = new
+					 * JSONArray(); list.put(admins2); obj.put("adminslist",
+					 * list); try (FileWriter file = new
+					 * FileWriter("AdminsList.json")){
+					 * file.write(obj.toString()); file.flush(); } catch
+					 * (Exception e) { // TODO Auto-generated catch block
+					 * e.printStackTrace(); } System.out.println(obj);
+					 */
 				} else {
 					JOptionPane.showMessageDialog(null, "Passowrds don't match!!", "Error", getState());
 				}
@@ -111,7 +136,7 @@ public class AddAdmin extends JFrame  {
 		textField_2.setColumns(10);
 		textField_2.setBounds(122, 77, 102, 22);
 		contentPane.add(textField_2);
-		
+
 		JButton button = new JButton("Back");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

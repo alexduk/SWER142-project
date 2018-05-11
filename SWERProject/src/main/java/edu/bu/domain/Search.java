@@ -352,8 +352,6 @@ public class Search extends JFrame {
 						JOptionPane.showMessageDialog(null, "Successfully saved");
 					}
 					if (rdbtnBoth.isSelected()) {
-						System.out.println(indexB1);
-						System.out.println(indexB2);
 
 						if (indexB1 > -1) {
 							AddEmployee.employees.set(indexB1,
