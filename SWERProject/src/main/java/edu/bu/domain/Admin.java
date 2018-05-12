@@ -1,39 +1,23 @@
 package edu.bu.domain;
 
-import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
-import org.json.JSONObject;
-
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.SwingConstants;
-import javax.swing.JTextField;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import java.awt.Font;
-import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.awt.event.ActionEvent;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JPasswordField;
-import javax.swing.JToolBar;
-import org.json.simple.parser.*;
-import java.awt.Color;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 
 public class Admin extends JFrame {
 	public static ArrayList<Administrator> admins = new ArrayList<Administrator>();
@@ -51,12 +35,6 @@ public class Admin extends JFrame {
 				try {
 					Admin frame = new Admin();
 					frame.setVisible(true);
-					try {
-					    frame.setIconImage(ImageIO.read(new File("users.png")));
-					}
-					catch (IOException exc) {
-					    exc.printStackTrace();
-					}
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -66,10 +44,10 @@ public class Admin extends JFrame {
 
 	/**
 	 * Create the frame.
-	 * @throws JsonProcessingException 
+	 * @throws IOException 
 	 */
-	public Admin() throws JsonProcessingException {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\github\\SWERProject\\users.png"));
+	public Admin() throws IOException {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("\\SWERProject\\users.png"));
 
 		setTitle("Log in");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -111,16 +89,7 @@ public class Admin extends JFrame {
 		textField_1.setBounds(114, 67, 124, 26);
 		contentPane.add(textField_1);
 		admins.add(new Administrator("alex","alex"));
-		/*JSONParser parser = new JSONParser();
-		try {
-			Object obj = parser.parse(new FileReader("AdminsList.json"));
-			JSONObject jsonObj = (JSONObject) obj;
-
-		}
-		catch (Exception n){}*/
-		
 		admins.addAll(AddAdmin.admins2);
-		
 		
 		JButton btnLogIn = new JButton("Log in");
 		btnLogIn.setBackground(new Color(0, 0, 255));

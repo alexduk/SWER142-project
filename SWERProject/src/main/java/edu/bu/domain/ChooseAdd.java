@@ -1,23 +1,19 @@
 package edu.bu.domain;
-import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-
-import javax.imageio.ImageIO;
-import javax.swing.JButton;
-import java.awt.Font;
-import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
-import java.awt.event.ActionEvent;
-import javax.swing.JLabel;
-import java.awt.Color;
-import java.awt.Toolkit;
 
 public class ChooseAdd extends JFrame {
 
@@ -44,7 +40,7 @@ public class ChooseAdd extends JFrame {
 	 * Create the frame.
 	 */
 	public ChooseAdd() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\github\\SWERProject\\layers.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("\\SWERProject\\layers.png"));
 		setTitle("Choose");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 380, 350);
@@ -143,7 +139,7 @@ public class ChooseAdd extends JFrame {
 				dispose();
 				try {
 					new Admin().setVisible(true);
-				} catch (JsonProcessingException e) {
+				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}

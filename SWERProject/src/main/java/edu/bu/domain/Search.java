@@ -1,26 +1,21 @@
 package edu.bu.domain;
 
-import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JTextPane;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
-import java.awt.Font;
+import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.util.concurrent.TimeUnit;
-import java.awt.event.ActionEvent;
-import java.awt.Toolkit;
-import java.awt.Color;
+import javax.swing.border.EmptyBorder;
 
 public class Search extends JFrame {
 
@@ -57,7 +52,7 @@ public class Search extends JFrame {
 	 * Create the frame.
 	 */
 	public Search() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\github\\SWERProject\\search.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("\\SWERProject\\search.png"));
 		setTitle("Search");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);

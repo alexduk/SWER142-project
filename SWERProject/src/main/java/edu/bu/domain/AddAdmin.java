@@ -1,31 +1,23 @@
 package edu.bu.domain;
 
-import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
-import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.awt.event.ActionEvent;
+import javax.swing.JPanel;
 import javax.swing.JPasswordField;
-import java.awt.Toolkit;
-import java.awt.Color;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class AddAdmin extends JFrame {
 	public static ArrayList<Administrator> admins2 = new ArrayList<Administrator>();
@@ -61,8 +53,7 @@ public class AddAdmin extends JFrame {
 	 */
 	public AddAdmin() {
 		setTitle("Add Admin");
-		setIconImage(
-				Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\github\\SWERProject\\customer-service.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("SWERProject\\customer-service.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 260, 210);
 		contentPane = new JPanel();
@@ -116,15 +107,6 @@ public class AddAdmin extends JFrame {
 
 					admins2.add(new Administrator(textField.getText(), textField_1.getText()));
 
-					/*
-					 * JSONObject obj = new JSONObject(); JSONArray list = new
-					 * JSONArray(); list.put(admins2); obj.put("adminslist",
-					 * list); try (FileWriter file = new
-					 * FileWriter("AdminsList.json")){
-					 * file.write(obj.toString()); file.flush(); } catch
-					 * (Exception e) { // TODO Auto-generated catch block
-					 * e.printStackTrace(); } System.out.println(obj);
-					 */
 				} else {
 					JOptionPane.showMessageDialog(null, "Passowrds don't match!!", "Error", getState());
 				}

@@ -1,10 +1,13 @@
 package edu.bu.domain;
 
-import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -13,13 +16,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.awt.event.ActionEvent;
-import java.awt.Color;
-import java.awt.Toolkit;
 
 public class AddStudent extends JFrame {
 	public static ArrayList<Student> students = new ArrayList<Student>();
@@ -53,7 +49,7 @@ public class AddStudent extends JFrame {
 	 * Create the frame.
 	 */
 	public AddStudent() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\github\\SWERProject\\student.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("SWERProject\\student.png"));
 		setTitle("Add Student");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 330, 300);

@@ -1,35 +1,23 @@
 package edu.bu.domain;
 
-import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
-
-import javax.swing.ButtonGroup;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JRadioButtonMenuItem;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
 import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JRadioButton;
-import java.awt.Choice;
-import javax.swing.JFormattedTextField;
-import javax.swing.SwingConstants;
-import javax.swing.DropMode;
-import javax.swing.JButton;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.print.PrinterException;
-import java.util.ArrayList;
-import java.awt.event.ActionEvent;
-import javax.swing.JTable;
-import javax.swing.JTextPane;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
-import javax.swing.JScrollBar;
-import java.awt.Scrollbar;
-import java.awt.Toolkit;
-import java.awt.Color;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
 
 public class Report extends JFrame {
 
@@ -57,7 +45,7 @@ public class Report extends JFrame {
 	 */
 	public Report() {
 		setTitle("Report");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\github\\SWERProject\\bars-chart.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("\\SWERProject\\bars-chart.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 430, 322);
 		contentPane = new JPanel();

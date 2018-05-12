@@ -1,27 +1,21 @@
 package edu.bu.domain;
 
-import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
-import java.awt.Font;
-import javax.swing.SwingConstants;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.imageio.ImageIO;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.awt.event.ActionEvent;
-import java.awt.Color;
-import java.awt.Toolkit;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 
 public class AddEmployee extends JFrame {
 
@@ -55,7 +49,7 @@ public class AddEmployee extends JFrame {
 	 * Create the frame.
 	 */
 	public AddEmployee() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\github\\SWERProject\\employee.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("\\SWERProject\\employee.png"));
 		setTitle("Add Employee");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 330, 300);
