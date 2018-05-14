@@ -184,14 +184,14 @@ public class AddStudent extends JFrame {
 				for (Student l : AddStudent.students) {
 					if (textField.getText().equals(l.name)) {
 						JOptionPane.showMessageDialog(null,
-								"This program doesn't support two names which are the same!", "Error", getState());
+								"Sorry, this name is already exist. Try again!!", "Error", getState());
 						return false;
 					}
 				}
 				for (Employee l : AddEmployee.employees) {
 					if (textField.getText().equals(l.name)) {
 						JOptionPane.showMessageDialog(null,
-								"This program doesn't support two names which are the same!", "Error", getState());
+								"Sorry, this name is already exist. Try again!!", "Error", getState());
 						return false;
 					}
 				}
