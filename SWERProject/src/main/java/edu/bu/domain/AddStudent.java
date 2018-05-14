@@ -35,10 +35,8 @@ public class AddStudent extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AddEmployee frame = new AddEmployee();
-					frame.setVisible(true);
-					}
-				catch (Exception e) {
+					new AddStudent().setVisible(true);
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
@@ -49,7 +47,7 @@ public class AddStudent extends JFrame {
 	 * Create the frame.
 	 */
 	public AddStudent() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("SWERProject\\student.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\swer-project\\SWERProject\\student.png"));
 		setTitle("Add Student");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 330, 300);
@@ -185,13 +183,15 @@ public class AddStudent extends JFrame {
 			private boolean ifExist(JTextField textField) {
 				for (Student l : AddStudent.students) {
 					if (textField.getText().equals(l.name)) {
-						JOptionPane.showMessageDialog(null, "This program doesn't support two names which are the same!", "Error", getState());
+						JOptionPane.showMessageDialog(null,
+								"This program doesn't support two names which are the same!", "Error", getState());
 						return false;
 					}
 				}
 				for (Employee l : AddEmployee.employees) {
 					if (textField.getText().equals(l.name)) {
-						JOptionPane.showMessageDialog(null, "This program doesn't support two names which are the same!", "Error", getState());
+						JOptionPane.showMessageDialog(null,
+								"This program doesn't support two names which are the same!", "Error", getState());
 						return false;
 					}
 				}

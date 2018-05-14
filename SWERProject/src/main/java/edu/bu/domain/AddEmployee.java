@@ -49,7 +49,7 @@ public class AddEmployee extends JFrame {
 	 * Create the frame.
 	 */
 	public AddEmployee() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("\\SWERProject\\employee.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\swer-project\\SWERProject\\employee.png"));
 		setTitle("Add Employee");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 330, 300);
@@ -187,13 +187,15 @@ public class AddEmployee extends JFrame {
 			private boolean ifExist(String text) {
 				for (Employee l : AddEmployee.employees) {
 					if (textField.getText().equals(l.name)) {
-						JOptionPane.showMessageDialog(null, "This program doesn't support two names which are the same!", "Error", getState());
+						JOptionPane.showMessageDialog(null,
+								"This program doesn't support two names which are the same!", "Error", getState());
 						return false;
 					}
 				}
 				for (Student l : AddStudent.students) {
 					if (textField.getText().equals(l.name)) {
-						JOptionPane.showMessageDialog(null, "This program doesn't support two names which are the same!", "Error", getState());
+						JOptionPane.showMessageDialog(null,
+								"This program doesn't support two names which are the same!", "Error", getState());
 						return false;
 					}
 				}

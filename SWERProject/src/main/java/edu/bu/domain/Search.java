@@ -52,7 +52,7 @@ public class Search extends JFrame {
 	 * Create the frame.
 	 */
 	public Search() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("\\SWERProject\\search.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\swer-project\\SWERProject\\search.png"));
 		setTitle("Search");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -409,7 +409,7 @@ public class Search extends JFrame {
 		});
 		btnSave.setEnabled(false);
 		btnSave.setFont(new Font("Times New Roman", Font.BOLD, 14));
-		btnSave.setBounds(256, 146, 89, 44);
+		btnSave.setBounds(256, 118, 89, 55);
 		contentPane.add(btnSave);
 
 		JButton btnBack = new JButton("Back");
@@ -422,7 +422,7 @@ public class Search extends JFrame {
 			}
 		});
 		btnBack.setFont(new Font("Times New Roman", Font.BOLD, 14));
-		btnBack.setBounds(256, 195, 89, 44);
+		btnBack.setBounds(256, 184, 89, 55);
 		contentPane.add(btnBack);
 	}
 }

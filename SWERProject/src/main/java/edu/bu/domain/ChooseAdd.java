@@ -40,7 +40,7 @@ public class ChooseAdd extends JFrame {
 	 * Create the frame.
 	 */
 	public ChooseAdd() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("\\SWERProject\\layers.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\swer-project\\SWERProject\\layers.png"));
 		setTitle("Choose");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 380, 350);

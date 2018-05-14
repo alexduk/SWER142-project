@@ -45,7 +45,7 @@ public class Report extends JFrame {
 	 */
 	public Report() {
 		setTitle("Report");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("\\SWERProject\\bars-chart.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\swer-project\\SWERProject\\bars-chart.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 430, 322);
 		contentPane = new JPanel();

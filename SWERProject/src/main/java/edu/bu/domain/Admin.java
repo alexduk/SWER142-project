@@ -47,8 +47,7 @@ public class Admin extends JFrame {
 	 * @throws IOException 
 	 */
 	public Admin() throws IOException {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("\\SWERProject\\users.png"));
-
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\swer-project\\SWERProject\\users.png"));
 		setTitle("Log in");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 275, 200);
