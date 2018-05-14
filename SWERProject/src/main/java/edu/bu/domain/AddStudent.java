@@ -50,7 +50,7 @@ public class AddStudent extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\swer-project\\SWERProject\\student.png"));
 		setTitle("Add Student");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 330, 300);
+		setBounds(450, 125, 330, 300);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(0, 0, 255));
 		contentPane.setForeground(new Color(0, 191, 255));
