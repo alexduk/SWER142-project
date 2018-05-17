@@ -53,7 +53,7 @@ public class AddAdmin extends JFrame {
 	 */
 	public AddAdmin() {
 		setTitle("Add Admin");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("customer-service.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\swer-project\\SWERProject\\customer-service.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(450, 125, 260, 210);
 		contentPane = new JPanel();

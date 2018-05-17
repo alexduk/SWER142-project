@@ -47,7 +47,7 @@ public class AddStudent extends JFrame {
 	 * Create the frame.
 	 */
 	public AddStudent() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("student.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\swer-project\\SWERProject\\student.png"));
 		setTitle("Add Student");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(450, 125, 330, 300);

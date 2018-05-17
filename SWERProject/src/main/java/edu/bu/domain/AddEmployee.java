@@ -49,7 +49,7 @@ public class AddEmployee extends JFrame {
 	 * Create the frame.
 	 */
 	public AddEmployee() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("employee.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\swer-project\\SWERProject\\employee.png"));
 		setTitle("Add Employee");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(450, 125, 330, 300);
