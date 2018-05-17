@@ -27,10 +27,13 @@ public class Search extends JFrame {
 	private JTextField textField_4;
 	private JTextField textField_5;
 	private JButton btnSave;
+	private JButton btnNext;
 	public static int indexM;
 	public static int indexS;
 	public static int indexB1 = -1;
 	public static int indexB2 = -1;
+	public static String s;
+	public static String em;
 
 	/**
 	 * Launch the application.
@@ -52,7 +55,7 @@ public class Search extends JFrame {
 	 * Create the frame.
 	 */
 	public Search() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\swer-project\\SWERProject\\search.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("search.png"));
 		setTitle("Search");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(450, 125, 450, 300);
@@ -182,8 +185,8 @@ public class Search extends JFrame {
 		contentPane.add(textField_5);
 
 		JButton btnSearch = new JButton("Search");
-		btnSearch.setForeground(new Color(255, 255, 255));
-		btnSearch.setBackground(new Color(0, 0, 255));
+		btnSearch.setForeground(Color.BLUE);
+		btnSearch.setBackground(Color.WHITE);
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent a) {
 				if (rdbtnEmployees.isSelected()) {
@@ -204,7 +207,10 @@ public class Search extends JFrame {
 								textField_4.setEditable(true);
 								textField_5.setEditable(true);
 								btnSave.setEnabled(true);
+								btnNext.setEnabled(true);
 								indexM = i;
+								em = textField.getText();
+								break;
 							}
 						}
 					} else {
@@ -214,6 +220,7 @@ public class Search extends JFrame {
 						textField_4.setEditable(false);
 						textField_5.setEditable(false);
 						btnSave.setEnabled(false);
+						btnNext.setEnabled(false);
 						textField_1.setText("");
 						textField_2.setText("");
 						textField_3.setText("");
@@ -242,7 +249,10 @@ public class Search extends JFrame {
 								textField_4.setEditable(true);
 								textField_5.setEditable(true);
 								btnSave.setEnabled(true);
+								btnNext.setEnabled(true);
 								indexS = i;
+								s = textField.getText();
+								break;
 							}
 						}
 					} else {
@@ -252,6 +262,7 @@ public class Search extends JFrame {
 						textField_4.setEditable(false);
 						textField_5.setEditable(false);
 						btnSave.setEnabled(false);
+						btnNext.setEnabled(false);
 						textField_1.setText("");
 						textField_2.setText("");
 						textField_3.setText("");
@@ -279,7 +290,10 @@ public class Search extends JFrame {
 								textField_4.setEditable(true);
 								textField_5.setEditable(true);
 								btnSave.setEnabled(true);
+								btnNext.setEnabled(true);
 								indexB1 = i;
+								em = textField.getText();
+								break;
 							}
 						}
 
@@ -296,7 +310,10 @@ public class Search extends JFrame {
 								textField_4.setEditable(true);
 								textField_5.setEditable(true);
 								btnSave.setEnabled(true);
+								btnNext.setEnabled(true);
 								indexB2 = i;
+								s = textField.getText();
+								break;
 							}
 						}
 
@@ -307,6 +324,7 @@ public class Search extends JFrame {
 						textField_4.setEditable(false);
 						textField_5.setEditable(false);
 						btnSave.setEnabled(false);
+						btnNext.setEnabled(false);
 						textField_1.setText("");
 						textField_2.setText("");
 						textField_3.setText("");
@@ -360,8 +378,8 @@ public class Search extends JFrame {
 		contentPane.add(lblNewLabel);
 
 		btnSave = new JButton("Save");
-		btnSave.setBackground(new Color(0, 0, 255));
-		btnSave.setForeground(new Color(255, 255, 255));
+		btnSave.setBackground(Color.WHITE);
+		btnSave.setForeground(Color.BLUE);
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
@@ -409,12 +427,12 @@ public class Search extends JFrame {
 		});
 		btnSave.setEnabled(false);
 		btnSave.setFont(new Font("Times New Roman", Font.BOLD, 14));
-		btnSave.setBounds(256, 118, 89, 55);
+		btnSave.setBounds(256, 162, 89, 32);
 		contentPane.add(btnSave);
 
 		JButton btnBack = new JButton("Back");
-		btnBack.setForeground(new Color(255, 255, 255));
-		btnBack.setBackground(new Color(0, 0, 255));
+		btnBack.setForeground(Color.BLUE);
+		btnBack.setBackground(Color.WHITE);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -422,7 +440,103 @@ public class Search extends JFrame {
 			}
 		});
 		btnBack.setFont(new Font("Times New Roman", Font.BOLD, 14));
-		btnBack.setBounds(256, 184, 89, 55);
+		btnBack.setBounds(256, 207, 89, 32);
 		contentPane.add(btnBack);
+
+		btnNext = new JButton("Next");
+		btnNext.setEnabled(false);
+		btnNext.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (rdbtnStudents.isSelected()) {
+					if (indexS == AddStudent.students.size() - 1) {
+						indexS = -1;
+					}
+					for (int i = indexS + 1; i < AddStudent.students.size(); i++) {
+						if (s.equals(AddStudent.students.get(i).name)) {
+							textField_1.setText(String.valueOf(AddStudent.students.get(i).age));
+							textField_2.setText(AddStudent.students.get(i).address.streetName);
+							textField_3.setText(AddStudent.students.get(i).address.houseNumber);
+							textField_4.setText(AddStudent.students.get(i).address.city);
+							textField_5.setText(String.valueOf(AddStudent.students.get(i).grade));
+							textField_1.setEditable(true);
+							textField_2.setEditable(true);
+							textField_3.setEditable(true);
+							textField_4.setEditable(true);
+							textField_5.setEditable(true);
+							indexS = i;
+							break;
+						}
+					}
+				}
+				if (rdbtnEmployees.isSelected()) {
+					if (indexM == AddEmployee.employees.size() - 1) {
+						indexM = -1;
+					}
+					for (int i = indexM + 1; i < AddEmployee.employees.size(); i++) {
+						if (em.equals(AddEmployee.employees.get(i).name)) {
+							textField_1.setText(String.valueOf(AddEmployee.employees.get(i).age));
+							textField_2.setText(AddEmployee.employees.get(i).address.streetName);
+							textField_3.setText(AddEmployee.employees.get(i).address.houseNumber);
+							textField_4.setText(AddEmployee.employees.get(i).address.city);
+							textField_5.setText(String.valueOf(AddEmployee.employees.get(i).salary));
+							textField_1.setEditable(true);
+							textField_2.setEditable(true);
+							textField_3.setEditable(true);
+							textField_4.setEditable(true);
+							textField_5.setEditable(true);
+							indexM = i;
+							break;
+						}
+					}
+				}
+				if (rdbtnBoth.isSelected()) {
+					if (indexB1 == AddEmployee.employees.size() - 1) {
+						indexB1 = -1;
+					}
+					if (indexB2 == AddStudent.students.size() - 1) {
+						indexB2 = -1;
+					}
+					for (int i = indexB1 + 1; i < AddEmployee.employees.size(); i++) {
+						if (em.equals(AddEmployee.employees.get(i).name)) {
+							textField_1.setText(String.valueOf(AddEmployee.employees.get(i).age));
+							textField_2.setText(AddEmployee.employees.get(i).address.streetName);
+							textField_3.setText(AddEmployee.employees.get(i).address.houseNumber);
+							textField_4.setText(AddEmployee.employees.get(i).address.city);
+							textField_5.setText(String.valueOf(AddEmployee.employees.get(i).salary));
+							textField_1.setEditable(true);
+							textField_2.setEditable(true);
+							textField_3.setEditable(true);
+							textField_4.setEditable(true);
+							textField_5.setEditable(true);
+							indexB1 = i;
+							em = textField.getText();
+							break;
+						}
+					}
+					for (int i = indexB2 + 1; i < AddStudent.students.size(); i++) {
+						if (s.equals(AddStudent.students.get(i).name)) {
+							textField_1.setText(String.valueOf(AddStudent.students.get(i).age));
+							textField_2.setText(AddStudent.students.get(i).address.streetName);
+							textField_3.setText(AddStudent.students.get(i).address.houseNumber);
+							textField_4.setText(AddStudent.students.get(i).address.city);
+							textField_5.setText(String.valueOf(AddStudent.students.get(i).grade));
+							textField_1.setEditable(true);
+							textField_2.setEditable(true);
+							textField_3.setEditable(true);
+							textField_4.setEditable(true);
+							textField_5.setEditable(true);
+							indexB2 = i;
+							s = textField.getText();
+							break;
+						}
+					}
+				}
+			}
+		});
+		btnNext.setForeground(Color.BLUE);
+		btnNext.setFont(new Font("Times New Roman", Font.BOLD, 14));
+		btnNext.setBackground(Color.WHITE);
+		btnNext.setBounds(256, 121, 89, 32);
+		contentPane.add(btnNext);
 	}
 }

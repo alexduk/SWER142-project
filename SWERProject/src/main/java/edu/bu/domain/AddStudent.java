@@ -47,7 +47,7 @@ public class AddStudent extends JFrame {
 	 * Create the frame.
 	 */
 	public AddStudent() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\swer-project\\SWERProject\\student.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("student.png"));
 		setTitle("Add Student");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(450, 125, 330, 300);
@@ -149,53 +149,31 @@ public class AddStudent extends JFrame {
 		contentPane.add(textField_5);
 
 		JButton btnNewButton = new JButton("Add");
-		btnNewButton.setBackground(new Color(0, 0, 255));
-		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setBackground(Color.WHITE);
+		btnNewButton.setForeground(Color.BLUE);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boolean c = ifExist(textField);
-				if (c) {
-					if (textField.getText().isEmpty() || textField_1.getText().isEmpty()
-							|| textField_2.getText().isEmpty() || textField_3.getText().isEmpty()
-							|| textField_4.getText().isEmpty() || textField_5.getText().isEmpty()) {
-						JOptionPane.showMessageDialog(null, "Please fill all the blanks!", "Error", getState());
+				if (textField.getText().isEmpty() || textField_1.getText().isEmpty() || textField_2.getText().isEmpty()
+						|| textField_3.getText().isEmpty() || textField_4.getText().isEmpty()
+						|| textField_5.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Please fill all the blanks!", "Error", getState());
 
-					} else {
-						try {
-							students.add(new Student(textField.getText(), Integer.parseInt(textField_1.getText()),
-									(new Address(textField_2.getText(), textField_3.getText(), textField_4.getText())),
-									Double.parseDouble(textField_5.getText())));
-							JOptionPane.showMessageDialog(null, "Done");
-							textField.setText("");
-							textField_1.setText("");
-							textField_2.setText("");
-							textField_3.setText("");
-							textField_4.setText("");
-							textField_5.setText("");
-						} catch (Exception n) {
-							JOptionPane.showMessageDialog(null, "Please enter a correct information!", "Error",
-									getState());
-						}
+				} else {
+					try {
+						students.add(new Student(textField.getText(), Integer.parseInt(textField_1.getText()),
+								(new Address(textField_2.getText(), textField_3.getText(), textField_4.getText())),
+								Double.parseDouble(textField_5.getText())));
+						JOptionPane.showMessageDialog(null, "Done");
+						textField.setText("");
+						textField_1.setText("");
+						textField_2.setText("");
+						textField_3.setText("");
+						textField_4.setText("");
+						textField_5.setText("");
+					} catch (Exception n) {
+						JOptionPane.showMessageDialog(null, "Please enter a correct information!", "Error", getState());
 					}
 				}
-			}
-
-			private boolean ifExist(JTextField textField) {
-				for (Student l : AddStudent.students) {
-					if (textField.getText().equals(l.name)) {
-						JOptionPane.showMessageDialog(null,
-								"Sorry, this name is already exist. Try again!!", "Error", getState());
-						return false;
-					}
-				}
-				for (Employee l : AddEmployee.employees) {
-					if (textField.getText().equals(l.name)) {
-						JOptionPane.showMessageDialog(null,
-								"Sorry, this name is already exist. Try again!!", "Error", getState());
-						return false;
-					}
-				}
-				return true;
 			}
 		});
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 18));
@@ -203,8 +181,8 @@ public class AddStudent extends JFrame {
 		contentPane.add(btnNewButton);
 
 		btnBack = new JButton("Back");
-		btnBack.setForeground(new Color(255, 255, 255));
-		btnBack.setBackground(new Color(0, 0, 255));
+		btnBack.setForeground(Color.BLUE);
+		btnBack.setBackground(Color.WHITE);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();

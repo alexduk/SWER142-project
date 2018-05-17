@@ -45,7 +45,7 @@ public class Report extends JFrame {
 	 */
 	public Report() {
 		setTitle("Report");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\swer-project\\SWERProject\\bars-chart.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("bars-chart.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(450, 125, 430, 322);
 		contentPane = new JPanel();
@@ -103,8 +103,8 @@ public class Report extends JFrame {
 		frmtdtxtfldSdf.setText("");
 
 		JButton btnReport = new JButton("Report");
-		btnReport.setForeground(new Color(255, 255, 255));
-		btnReport.setBackground(new Color(0, 0, 255));
+		btnReport.setForeground(Color.BLUE);
+		btnReport.setBackground(Color.WHITE);
 		btnReport.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (rdbtnEmployees.isSelected()) {
@@ -156,8 +156,8 @@ public class Report extends JFrame {
 		contentPane.add(btnReport);
 
 		JButton btnBack = new JButton("Back");
-		btnBack.setBackground(new Color(0, 0, 255));
-		btnBack.setForeground(new Color(255, 255, 255));
+		btnBack.setBackground(Color.WHITE);
+		btnBack.setForeground(Color.BLUE);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -169,8 +169,8 @@ public class Report extends JFrame {
 		contentPane.add(btnBack);
 
 		JButton btnHelp = new JButton("Help");
-		btnHelp.setBackground(new Color(0, 0, 255));
-		btnHelp.setForeground(new Color(255, 255, 255));
+		btnHelp.setBackground(Color.WHITE);
+		btnHelp.setForeground(Color.BLUE);
 		btnHelp.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		btnHelp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -183,8 +183,8 @@ public class Report extends JFrame {
 		contentPane.add(btnHelp);
 
 		btnPrint = new JButton("Save & Print");
-		btnPrint.setForeground(new Color(255, 255, 255));
-		btnPrint.setBackground(new Color(0, 0, 255));
+		btnPrint.setForeground(Color.BLUE);
+		btnPrint.setBackground(Color.WHITE);
 		btnPrint.setEnabled(false);
 		btnPrint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

@@ -40,7 +40,7 @@ public class ChooseAdd extends JFrame {
 	 * Create the frame.
 	 */
 	public ChooseAdd() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\swer-project\\SWERProject\\layers.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("layers.png"));
 		setTitle("Choose");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(450, 125, 380, 350);
@@ -51,8 +51,8 @@ public class ChooseAdd extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Add Employee");
-		btnNewButton.setForeground(new Color(255, 255, 255));
-		btnNewButton.setBackground(new Color(0, 0, 255));
+		btnNewButton.setForeground(Color.BLUE);
+		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -60,26 +60,26 @@ public class ChooseAdd extends JFrame {
 				
 			}
 		});
-		btnNewButton.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton.setBounds(10, 56, 337, 40);
 		contentPane.add(btnNewButton);
 		
 		JButton btnAddStudent = new JButton("Add Student");
-		btnAddStudent.setForeground(new Color(255, 255, 255));
-		btnAddStudent.setBackground(new Color(0, 0, 255));
+		btnAddStudent.setForeground(Color.BLUE);
+		btnAddStudent.setBackground(Color.WHITE);
 		btnAddStudent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				new AddStudent().setVisible(true);
 			}
 		});
-		btnAddStudent.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+		btnAddStudent.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnAddStudent.setBounds(10, 107, 337, 40);
 		contentPane.add(btnAddStudent);
 		
 		JButton btnAddAdmin = new JButton("Add Admin");
-		btnAddAdmin.setForeground(new Color(255, 255, 255));
-		btnAddAdmin.setBackground(new Color(0, 0, 255));
+		btnAddAdmin.setForeground(Color.BLUE);
+		btnAddAdmin.setBackground(Color.WHITE);
 		btnAddAdmin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -87,33 +87,33 @@ public class ChooseAdd extends JFrame {
 				
 			}
 		});
-		btnAddAdmin.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+		btnAddAdmin.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnAddAdmin.setBounds(10, 158, 337, 40);
 		contentPane.add(btnAddAdmin);
 		
 		JButton btnSearchForEmployees = new JButton("Search For Employees and Students");
-		btnSearchForEmployees.setForeground(new Color(255, 255, 255));
-		btnSearchForEmployees.setBackground(new Color(0, 0, 255));
+		btnSearchForEmployees.setForeground(Color.BLUE);
+		btnSearchForEmployees.setBackground(Color.WHITE);
 		btnSearchForEmployees.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				new Search().setVisible(true);
 			}
 		});
-		btnSearchForEmployees.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+		btnSearchForEmployees.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnSearchForEmployees.setBounds(10, 209, 337, 40);
 		contentPane.add(btnSearchForEmployees);
 		
 		JButton btnReportGra = new JButton("Report Salaries and Grades");
-		btnReportGra.setForeground(new Color(255, 255, 255));
-		btnReportGra.setBackground(new Color(0, 0, 255));
+		btnReportGra.setForeground(Color.BLUE);
+		btnReportGra.setBackground(Color.WHITE);
 		btnReportGra.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				new Report().setVisible(true);
 			}
 		});
-		btnReportGra.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+		btnReportGra.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnReportGra.setBounds(10, 260, 337, 40);
 		contentPane.add(btnReportGra);
 		try{
@@ -132,8 +132,8 @@ public class ChooseAdd extends JFrame {
 		
 		
 		JButton btnNewButton_1 = new JButton("Log out");
-		btnNewButton_1.setForeground(new Color(255, 255, 255));
-		btnNewButton_1.setBackground(new Color(0, 0, 255));
+		btnNewButton_1.setForeground(Color.BLUE);
+		btnNewButton_1.setBackground(Color.WHITE);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();

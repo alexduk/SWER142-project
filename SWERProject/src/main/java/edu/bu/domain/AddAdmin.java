@@ -53,7 +53,7 @@ public class AddAdmin extends JFrame {
 	 */
 	public AddAdmin() {
 		setTitle("Add Admin");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\swer-project\\SWERProject\\customer-service.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("customer-service.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(450, 125, 260, 210);
 		contentPane = new JPanel();
@@ -86,8 +86,8 @@ public class AddAdmin extends JFrame {
 		contentPane.add(textField_1);
 
 		JButton btnNewButton = new JButton("Add");
-		btnNewButton.setBackground(new Color(0, 0, 255));
-		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setBackground(Color.WHITE);
+		btnNewButton.setForeground(Color.BLUE);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (textField.getText().isEmpty() || textField_1.getText().isEmpty()
@@ -138,8 +138,8 @@ public class AddAdmin extends JFrame {
 		contentPane.add(textField_2);
 
 		JButton button = new JButton("Back");
-		button.setForeground(new Color(255, 255, 255));
-		button.setBackground(new Color(0, 0, 255));
+		button.setForeground(Color.BLUE);
+		button.setBackground(Color.WHITE);
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();

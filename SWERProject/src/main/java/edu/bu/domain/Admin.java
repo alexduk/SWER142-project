@@ -47,7 +47,7 @@ public class Admin extends JFrame {
 	 * @throws IOException 
 	 */
 	public Admin() throws IOException {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josep\\swer-project\\SWERProject\\users.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("users.png"));
 		setTitle("Log in");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(450, 125, 275, 200);
@@ -91,8 +91,8 @@ public class Admin extends JFrame {
 		admins.addAll(AddAdmin.admins2);
 		
 		JButton btnLogIn = new JButton("Log in");
-		btnLogIn.setBackground(new Color(0, 0, 255));
-		btnLogIn.setForeground(new Color(255, 255, 255));
+		btnLogIn.setBackground(Color.WHITE);
+		btnLogIn.setForeground(Color.BLUE);
 		btnLogIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (textField.getText().isEmpty() || textField_1.getText().isEmpty()) {
